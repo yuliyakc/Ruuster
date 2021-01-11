@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.2.1"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
   }
 }
