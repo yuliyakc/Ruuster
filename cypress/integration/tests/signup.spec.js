@@ -15,7 +15,7 @@ describe('Verify sign up', function() {
         let emailForCode = secretData.email.replace("@", "+" + secretData.lastEmailNum + "@");
         cy.get('input[name="email"]').type(emailForCode, {force: true});
         cy.get('input[name="password"]').type(secretData.pass, {force: true});
-        cy.get('button[type="submit"]').git
+        cy.get('button[type="submit"]').click({force: true});
         cy.wait(6000);
       }
         cy.get('input[name="phone-number"]').type(secretData.phoneNumber, {force:true});
