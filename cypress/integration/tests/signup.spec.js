@@ -11,7 +11,8 @@ describe('Verify sign up', function() {
         cy.get('input[name="lastName"]').type(secretData.LastName, {force: true});
         secretData.lastEmailNum = parseInt(secretData.lastEmailNum) + 1;
         console.log(secretData.lastEmailNum);
-        cy.writeFile('D:/__PROJECTS__/Ruuster/cypress/fixtures/secret.json', JSON.stringify(secretData));
+        //cy.writeFile('D:/__PROJECTS__/Ruuster/cypress/fixtures/secret.json', JSON.stringify(secretData));
+        cy.writeFile('./cypress/fixtures/secret.json', JSON.stringify(secretData));
         let emailForCode = secretData.email.replace("@", "+" + secretData.lastEmailNum + "@");
         cy.get('input[name="email"]').type(emailForCode, {force: true});
         cy.get('input[name="password"]').type(secretData.pass, {force: true});

@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add("getTwilloCode", ({accountSid, authToken, telFrom, telTo}) => {
+    const twilio = require('twilio');
+    const LIMIT = 1;
+    const client = new twilio(accountSid, authToken);
+    client.messages.list({
+        // dateSent: new Date(Date.UTC(2021, 1, 14, 0, 0, 0)),
+        from: telFrom,
+        to: telTo,
+        limit: LIMIT
+    })
+        // .then(messages => messages.forEach(m => cy.log(m.sid,m.body)));
+        .then(result => {
+            console.log(result);
+            return result;
+        });
+});
