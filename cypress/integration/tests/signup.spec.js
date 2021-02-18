@@ -32,6 +32,22 @@ describe('Verify sign up', function() {
                     cy.get('.button').click({force: true});
                     cy.wait(3000);
                     cy.get('.button').click({force: true});
+                    cy.get('.onboarding--content-answer-select').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-select').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.content-answers-zip__placeholder').click({force: true})
+                    //     .type("900",{force: true});
+                     //.invoke('val', 25)
+                    //cy.get('#onboarding-zip-select').trigger('focus',{force: true});
+                        //.type("900",{force: true});
+                    cy.wait(4000);
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-vertical-select').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+
                 });
         });
     });
