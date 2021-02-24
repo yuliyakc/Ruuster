@@ -10,7 +10,8 @@
   "author": "Yuliya",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^6.2.1"
+    "cypress": "^6.2.1",
+    "cypress-react-selector": "^2.3.6"
   },
   "dependencies": {
     "fs": "0.0.1-security",

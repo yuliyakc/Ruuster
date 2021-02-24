@@ -37,16 +37,50 @@ describe('Verify sign up', function() {
                     cy.get('.onboarding--content-answer-select').eq(1).click({force: true});
                     cy.get('button[type="button"]').eq(1).click({force: true});
                     cy.get('button[type="button"]').eq(1).click({force: true});
-                    cy.get('.content-answers-zip__placeholder').click({force: true})
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    //cy.get('.content-answers-zip__placeholder').click({force: true})
                     //     .type("900",{force: true});
                      //.invoke('val', 25)
                     //cy.get('#onboarding-zip-select').trigger('focus',{force: true});
                         //.type("900",{force: true});
-                    cy.wait(4000);
+                    cy.wait(6000);
                     cy.get('button[type="button"]').eq(1).click({force: true});
                     cy.get('.onboarding--content-answer-vertical-select').eq(1).click({force: true});
                     cy.get('button[type="button"]').eq(1).click({force: true});
                     cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-vertical-select').eq(2).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-select-inner').eq(2).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-vertical-select-inner').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-select-inner').eq(0).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-select-inner').eq(0).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-vertical-select').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('.onboarding--content-answer-vertical-select').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.get('button[type="button"]').eq(1).click({force: true});
+                    cy.wait(4000);
+                    cy.get('.introjs-button').eq(2).click({force: true});
+                    cy.get('.introjs-button').eq(2).click({force: true});
+                    cy.get('.introjs-button').eq(0).click({force: true});
+                    cy.get('.sidebar-item').eq(1).click({force:true});
 
                 });
         });
