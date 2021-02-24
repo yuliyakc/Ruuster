@@ -67,7 +67,7 @@ describe('Sign in', function() {
                     cy.get('input[id="signin-otp"]').type(code, {force: true});
                     cy.get('.button').click({force: true});
                 });
-            cy.get('.agent-dashboard--client-activity-user-item-counter').contains('2');git
+            cy.get('.agent-dashboard--client-activity-user-item-counter').contains('3');
         });
     });
 });
