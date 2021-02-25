@@ -21,7 +21,7 @@ describe('Verify sign up', function() {
             }
             cy.get('input[name="phone-number"]').type(secretData.phoneNumber, {force: true});
             cy.get('button[type="submit"]').click({force: true});
-            cy.wait(10000);
+            cy.wait(5000);
             cy.request('http://localhost:3000/get_code_from_twillo')
                 .then((response) => {
                     console.log(response.body[0].body.substring(0, 6));
@@ -30,7 +30,7 @@ describe('Verify sign up', function() {
                     cy.wait(5000);
                     cy.get('input[id="secure-account-code"]').type(code, {force: true});
                     cy.get('.button').click({force: true});
-                    cy.wait(3000);
+                    cy.wait(10000);
                     cy.get('.button').click({force: true});
                     cy.get('.onboarding--content-answer-select').eq(1).click({force: true});
                     cy.get('button[type="button"]').eq(1).click({force: true});
