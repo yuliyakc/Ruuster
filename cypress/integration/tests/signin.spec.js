@@ -46,7 +46,7 @@ describe('Sign in', function() {
             cy.get('a[href="/education"]').click({force: true});
             cy.wait(1000);
             cy.get('.articles--item-read').eq(0).click({force: true});
-            cy.wait(2000);
+            cy.wait(35000);
         });
     });
 
@@ -57,7 +57,7 @@ describe('Sign in', function() {
             cy.get('input[name="email"]').type(secretData.agentEmail, {force: true});
             cy.get('input[name="password"]').type(secretData.agentPass, {force: true});
             cy.get('button[type="submit"]').click({force: true});
-            cy.wait(5000);
+            cy.wait(10000);
             cy.request('http://localhost:3000/get_code_from_twillo')
                 .then((response) => {
                     console.log(response.body[0].body.substring(0, 6));
@@ -67,7 +67,7 @@ describe('Sign in', function() {
                     cy.get('input[id="signin-otp"]').type(code, {force: true});
                     cy.get('.button').click({force: true});
                 });
-            //cy.get('.agent-dashboard--client-activity-user-item-counter').contains('3');
+            cy.get('.agent-dashboard--client-activity-user-item-counter').contains('3');
         });
     });
 });
