@@ -41,3 +41,18 @@ Cypress.Commands.add("getTwilloCode", ({accountSid, authToken, telFrom, telTo}) 
             return result;
         });
 });
+
+Cypress.Commands.add('inviteClient', () => {
+    cy.fixture('secret').then(({ secretData }) => {
+        cy.get('a[href="/agent/dashboard/client/invite"]').click({force: true});
+        cy.get('input[id="agent-dashboard-firstname"]').type(secretData.FirstNameInvClient,{force: true});
+        cy.get('input[id="agent-dashboard-lastname"]').type(secretData.LastNameInvClient,{force: true});
+        secretData.lastEmailInviteClient = parseInt(secretData.lastEmailInviteClient) + 1;
+        console.log(secretData.lastEmailInviteClient);
+        cy.writeFile('./cypress/fixtures/secret.json', JSON.stringify(secretData));
+        let emailForInviteClient = secretData.emailInvClient.replace("@", "+" + secretData.lastEmailInviteClient + "@");
+        cy.get('input[id="agent-dashboard-email"]').type(secretData.emailForInviteClient,{force: true});
+        cy.get('.button').click({force: true});
+        cy.get('img[src="/images/agent-invite-client-congratulations.png"]').should('exist', {force: true});
+    });
+});
